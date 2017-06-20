@@ -17,7 +17,9 @@ if((*(pp + j))->getSalary() > (*(pp + k))->getSalary()) {  мен€ем указатели мест
 
 using namespace std;
 
-int main() {
+int main() 
+{
+	setlocale(LC_ALL, "rus");
 	person* persPtr[100]; // массив указателей на person
 	int n = 0; // количество элементов в массиве
 	char choice; // переменна€ дл€ ввода символа
@@ -37,5 +39,6 @@ int main() {
 	for (int j = 0; j < n; j++) // покажем отсортированный список
 		persPtr[j]->printName();
 	cout << endl;
+	system("pause");
 	return 0;
 }
