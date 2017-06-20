@@ -1,5 +1,6 @@
 #pragma once
-
+#include <string>
+#include <iostream>
 using namespace std;
 
 class person
@@ -7,18 +8,9 @@ class person
 protected:
 	string name; // имя
 public:
-	void setName() // установка имени
-	{
-		cout << "Введите имя: "; cin >> name;
-	}
-	void printName() // показ имени
-	{
-		cout << endl << name;
-	}
-	string getName() // получение имени
-	{
-		return name;
-	}
+	void setName(); // установка имени
+	void printName(); // показ имени
+	string getName(); // получение имени
 	person();
 	~person();
 };
