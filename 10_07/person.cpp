@@ -18,13 +18,20 @@ string person::getName()
 	return name;
 }
 
-void person::printName()
+float person::getSalary()
 {
-	cout << endl << name;
+	return salary;
 }
 
-void person::setName()
+void person::printData()
+{
+	cout << endl << name << ", зарплата = " << salary << endl;
+}
+
+void person::setData()
 {
 	cout << "Введите имя: "; 
 	cin >> name;
+	cout << "Введите зарплату: ";
+	cin >> salary;
 }

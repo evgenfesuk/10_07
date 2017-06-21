@@ -7,10 +7,12 @@ class person
 {
 protected:
 	string name; // имя
+	float salary; // зарплата
 public:
-	void setName(); // установка имени
-	void printName(); // показ имени
+	void setData(); // установка имени
+	void printData(); // показ имени
 	string getName(); // получение имени
+	float getSalary(); // получение зарплаты
 	person();
 	~person();
 };
