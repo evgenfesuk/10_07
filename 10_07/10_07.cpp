@@ -14,6 +14,7 @@ if((*(pp + j))->getSalary() > (*(pp + k))->getSalary()) {  меняем указатели мест
 #include <string>
 #include "person.h"
 #include "bsort.h"
+#include "salsort.h"
 
 using namespace std;
 
@@ -23,22 +24,33 @@ int main()
 	person* persPtr[100]; // массив указателей на person
 	int n = 0; // количество элементов в массиве
 	char choice; // переменная для ввода символа
+
 	do
 	{
 		persPtr[n] = new person; // создаем новый объект
-		persPtr[n]->setName(); // вводим имя
+		persPtr[n]->setData(); // вводим имя
 		n++; // увеличиваем количество
 		cout << "Продолжаем ввод (y/n)?"; // спрашиваем, закончен ли ввод
 		cin >> choice;
 	} while (choice == 'y');
+
 	cout << "\nНеотсортированный список:";
 	for (int j = 0; j < n; j++) // покажем неотсортированный список
-	persPtr[j]->printName();
+	persPtr[j]->printData();
+
 	bsort(persPtr, n); // отсортируем указатели
-	cout << "\nОтсортированный список:";
+
+	cout << "\nОтсортированный по именам список:";
 	for (int j = 0; j < n; j++) // покажем отсортированный список
-		persPtr[j]->printName();
-	cout << endl;
+		persPtr[j]->printData();
+
+	salsort(persPtr, n);
+
+	cout << "\nОтсортированный по зарплатам список:";
+	for (int j = 0; j < n; j++) // покажем отсортированный список
+		persPtr[j]->printData();
+
+
 	system("pause");
 	return 0;
 }
